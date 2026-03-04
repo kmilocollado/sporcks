@@ -9,39 +9,39 @@
  */
 {
   "type": "header",
-  "name": "Header",
+  "name": "Header group",
   "sections": {
-    "header_announcements_9jGBFp": {
-      "type": "header-announcements",
+    "announcement-bar": {
+      "type": "announcement-bar",
       "blocks": {
-        "announcement_BxgCk9": {
-          "type": "_announcement",
+        "message_BYG78q": {
+          "type": "message",
           "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
+            "text": "Announce something here"
+          }
+        },
+        "message_gJbTnL": {
+          "type": "message",
+          "settings": {
+            "text": "<a href=\"https://stoxenergy.com/pages/shipping\" title=\"Shipping\"><strong>Free</strong> shipping on orders over €60*</a>"
+          }
         }
       },
       "block_order": [
-        "announcement_BxgCk9"
+        "message_BYG78q",
+        "message_gJbTnL"
       ],
-      "name": "t:names.announcement_bar",
+      "disabled": true,
       "settings": {
-        "speed": 5,
-        "section_width": "page-width",
-        "color_scheme": "scheme-1",
-        "divider_width": 1,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "color_scheme": "scheme-3",
+        "enable_sticky": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "desktop_font_size": 11,
+        "mobile_font_size": 10
       }
     },
-    "header_section": {
+    "header": {
       "type": "header",
       "blocks": {
         "header-logo": {
@@ -62,11 +62,11 @@
           "settings": {
             "menu": "main-menu",
             "color_scheme": "",
-            "type_font_primary_size": "0.875rem",
+            "type_font_primary_size": "1rem",
             "menu_font_style": "inverse",
-            "type_font_primary_link": "body",
+            "type_font_primary_link": "heading",
             "type_case_primary_link": "none",
-            "menu_style": "featured_products",
+            "menu_style": "collection_images",
             "featured_products_aspect_ratio": "4 / 5",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
@@ -80,17 +80,18 @@
         }
       },
       "settings": {
-        "logo_position": "left",
+        "logo_position": "center",
         "menu_position": "left",
         "menu_row": "top",
+        "customer_account_menu": "customer-account-main-menu",
         "show_search": true,
         "search_position": "right",
         "search_row": "top",
         "show_country": true,
-        "country_selector_style": false,
+        "country_selector_style": true,
         "show_language": true,
         "localization_font": "heading",
-        "localization_font_size": "0.875rem",
+        "localization_font_size": "1rem",
         "localization_position": "right",
         "localization_row": "top",
         "section_width": "page-width",
@@ -99,11 +100,15 @@
         "divider_width": 0,
         "divider_size": "page-width",
         "border_width": 0,
-        "color_scheme_top": "scheme-1",
+        "actions_display_style": "icon",
+        "actions_font_size": "0.875rem",
+        "actions_font": "body",
+        "actions_text_case": "none",
+        "color_scheme_top": "",
         "color_scheme_bottom": "",
-        "color_scheme_transparent": "scheme-6",
+        "color_scheme_transparent": "",
         "enable_transparent_header_home": false,
-        "home_color_scheme": "inverse",
+        "home_color_scheme": "default",
         "enable_transparent_header_product": false,
         "product_color_scheme": "default",
         "enable_transparent_header_collection": false,
@@ -112,7 +117,7 @@
     }
   },
   "order": [
-    "header_announcements_9jGBFp",
-    "header_section"
+    "announcement-bar",
+    "header"
   ]
 }
