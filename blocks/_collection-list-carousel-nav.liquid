@@ -1,0 +1,23 @@
+{%- comment -%}
+  Bloque que reserva el lugar donde se mostrará la navegación del carrusel (flechas).
+  Solo tiene efecto en la sección Lista de colecciones con diseño Carrusel y
+  "Posición de la navegación" en "Extremo derecho del encabezado".
+  Añade este bloque dentro del grupo donde está tu encabezado para que las flechas aparezcan ahí.
+{%- endcomment -%}
+{%- if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' -%}
+  <div
+    class="collection-list-carousel-nav-slot"
+    data-carousel-nav-slot="collectionList"
+    {{ block.shopify_attributes }}
+  >
+    {%- comment -%} Las flechas se mueven aquí por JS {%- endcomment -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:names.collection_list_carousel_nav",
+  "tag": null,
+  "settings": []
+}
+{% endschema %}

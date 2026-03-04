@@ -114,7 +114,42 @@
     grid-column: 1 / -1;
     grid-row: 2;
   }
+
+  /* Cuando la navegación está en un bloque, no usar grid */
+  .section-resource-list--carousel-nav-header-end.section-resource-list--carousel-nav-in-block {
+    display: block;
+  }
+
+  .section-resource-list--carousel-nav-in-block .collection-list-carousel-nav-slot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
 {% endstylesheet %}
+
+{% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}
+  <script>
+    (function() {
+      function moveCarouselNav() {
+        const section = document.querySelector('[data-testid="collection-list"]')?.closest('.shopify-section');
+        if (!section) return;
+        const slot = section.querySelector('[data-carousel-nav-slot="collectionList"]');
+        if (!slot) return;
+        const slideshow = section.querySelector('slideshow-component[ref="collectionList"]');
+        if (!slideshow) return;
+        const arrows = slideshow.querySelector('slideshow-arrows');
+        if (!arrows) return;
+        slot.appendChild(arrows);
+        section.classList.add('section-resource-list--carousel-nav-in-block');
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', moveCarouselNav);
+      } else {
+        moveCarouselNav();
+      }
+    })();
+  </script>
+{% endif %}
 
 {% schema %}
 {
