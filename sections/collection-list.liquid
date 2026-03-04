@@ -45,6 +45,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      width: 100%;
     }
 
     #shopify-section-{{ section.id }} .collection-list__header-row .section-header {
@@ -56,6 +57,18 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    #shopify-section-{{ section.id }} .collection-list__arrows carousel-prev-button,
+    #shopify-section-{{ section.id }} .collection-list__arrows carousel-next-button {
+      display: inline-block;
+    }
+
+    /* Mantener las flechas visibles en el header (incluso prev deshabilitado al inicio) */
+    #shopify-section-{{ section.id }} .collection-list__arrows .prev-next-button[disabled] {
+      opacity: 0.5;
+      visibility: visible;
     }
   </style>
 
