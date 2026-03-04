@@ -472,6 +472,8 @@
     "caption": "Caption",
     "caret": "Caret",
     "carousel": "Carousel",
+    "carousel_nav_header_end": "Right side of header",
+    "carousel_nav_inline": "With carousel (default)",
     // Icon selection option for carrot graphic
     "carrot": "Carrot",
     // Alignment option to center content horizontally or vertically
@@ -905,6 +907,7 @@
     "hover_text": "Hover text",
     "icon": "Icon",
     "icon_background": "Icon background",
+    "carousel_nav_position": "Carousel navigation position",
     "icons": "Icons",
     "image": "Image",
     "image_1": "Image 1",

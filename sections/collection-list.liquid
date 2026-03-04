@@ -25,6 +25,7 @@
     section-resource-list
     spacing-style
     gap-style
+    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}section-resource-list--carousel-nav-header-end{% endif %}
   "
   style="
     {% render 'spacing-style', settings: section.settings %}
@@ -70,6 +71,50 @@
     test_id: 'collections-list-grid'
   %}
 </div>
+
+{% stylesheet %}
+  .section-resource-list--carousel-nav-header-end {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    gap: var(--section-stack-gap, 1.5rem);
+  }
+
+  .section-resource-list--carousel-nav-header-end .section-resource-list__content {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .section-resource-list--carousel-nav-header-end .resource-list {
+    display: contents;
+  }
+
+  .section-resource-list--carousel-nav-header-end .resource-list__carousel {
+    display: contents;
+  }
+
+  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-component {
+    display: contents;
+  }
+
+  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-container {
+    display: contents;
+  }
+
+  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-arrows {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    margin-block: 0;
+  }
+
+  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-slides {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -292,6 +337,23 @@
       ],
       "default": "none",
       "visible_if": "{{ section.settings.icons_style != 'none' and section.settings.layout_type == 'carousel' or section.settings.carousel_on_mobile == true }}"
+    },
+    {
+      "type": "select",
+      "id": "carousel_nav_position",
+      "label": "t:settings.carousel_nav_position",
+      "options": [
+        {
+          "value": "inline",
+          "label": "t:options.carousel_nav_inline"
+        },
+        {
+          "value": "header_end",
+          "label": "t:options.carousel_nav_header_end"
+        }
+      ],
+      "default": "inline",
+      "visible_if": "{{ section.settings.layout_type == 'carousel' }}"
     },
     {
       "type": "header",
