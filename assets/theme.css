@@ -4706,7 +4706,6 @@ product-rerender {
 
 :has(.shopify-section:first-child [allow-transparent-header]):not(:has(.shopify-section--header ~ .shopify-section-group-header-group)) .header:not(:hover, .is-solid, :has(.header__primary-nav [open])) {
   --header-show-transparent-logo: 1;
-  --header-separation-border-color: 0 0 0 / 0;
   --background: 0 0 0 / 0;
   --background-gradient: 0 0 0 / 0;
   --border-color: 0 0 0 / 0;
