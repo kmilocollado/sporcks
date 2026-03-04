@@ -45,12 +45,19 @@
           "settings": {
             "text": "Discover our products"
           }
+        },
+        "image_htQPYe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo.png"
+          }
         }
       },
       "block_order": [
         "text_RmRXBx",
         "image_aLYQfw",
-        "text_F3Biw6"
+        "text_F3Biw6",
+        "image_htQPYe"
       ],
       "name": "t:sections.scrolling_content.presets.scrolling_content.name",
       "settings": {
