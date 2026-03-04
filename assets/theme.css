@@ -6198,7 +6198,7 @@ product-rerender {
 }
 
 .scrolling-content__image > img {
-  max-width: 1.5em;
+  max-width: 5em;
 }
 
 .main-search-form {
