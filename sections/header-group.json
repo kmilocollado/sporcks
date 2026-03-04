@@ -25,6 +25,50 @@
         "desktop_justification": "space-between"
       }
     },
+    "scrolling_content_Lr9imf": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_RmRXBx": {
+          "type": "text",
+          "settings": {
+            "text": "Welcome to our shop"
+          }
+        },
+        "image_aLYQfw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo.png"
+          }
+        },
+        "text_F3Biw6": {
+          "type": "text",
+          "settings": {
+            "text": "Discover our products"
+          }
+        }
+      },
+      "block_order": [
+        "text_RmRXBx",
+        "image_aLYQfw",
+        "text_F3Biw6"
+      ],
+      "name": "t:sections.scrolling_content.presets.scrolling_content.name",
+      "settings": {
+        "separate_section_with_border": false,
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
+        "text_font": "body",
+        "text_font_size_mobile": 12,
+        "text_font_size_desktop": 14,
+        "section_vertical_spacing_mobile": 10,
+        "section_vertical_spacing_desktop": 10,
+        "item_horizontal_spacing_mobile": 20,
+        "item_horizontal_spacing_desktop": 40,
+        "background": "#000000",
+        "text_color": "#ffffff"
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -45,6 +89,7 @@
         "message_BYG78q",
         "message_gJbTnL"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-3",
         "enable_sticky": false,
@@ -121,6 +166,7 @@
   },
   "order": [
     "countdown_condensed_pFiVnc",
+    "scrolling_content_Lr9imf",
     "announcement-bar",
     "header"
   ]
