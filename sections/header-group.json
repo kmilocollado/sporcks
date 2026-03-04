@@ -9,172 +9,110 @@
  */
 {
   "type": "header",
-  "name": "Header group",
+  "name": "Header",
   "sections": {
-    "countdown_condensed_pFiVnc": {
-      "type": "countdown-condensed",
-      "disabled": true,
-      "name": "t:sections.countdown_timer.presets.countdown_timer.name",
-      "settings": {
-        "color_scheme": "scheme-c56e1dc8-7b9b-411d-9a6f-ef824e7298a6",
-        "content": "FLASH SALE - <a href=\"/collections/flash-sale-26\" title=\"FLASH SALE 26\">BUY NOW</a>",
-        "link_text": "",
-        "link_url": "shopify://collections/flash-sale-26",
-        "expiration_date": "2026-02-27 10:00",
-        "expiration_behavior": "leave",
-        "desktop_justification": "space-between"
-      }
-    },
-    "scrolling_content_Lr9imf": {
-      "type": "scrolling-content",
+    "header_announcements_9jGBFp": {
+      "type": "header-announcements",
       "blocks": {
-        "text_RmRXBx": {
-          "type": "text",
+        "announcement_BxgCk9": {
+          "type": "_announcement",
           "settings": {
-            "text": "Welcome to our shop"
-          }
-        },
-        "image_aLYQfw": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/logo.png"
-          }
-        },
-        "text_F3Biw6": {
-          "type": "text",
-          "settings": {
-            "text": "Discover our products"
-          }
-        },
-        "image_htQPYe": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/logo.png"
-          }
+            "text": "Welcome to our store",
+            "link": "",
+            "font": "var(--font-subheading--family)",
+            "font_size": "0.75rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text_RmRXBx",
-        "image_aLYQfw",
-        "text_F3Biw6",
-        "image_htQPYe"
+        "announcement_BxgCk9"
       ],
-      "name": "t:sections.scrolling_content.presets.scrolling_content.name",
+      "name": "t:names.announcement_bar",
       "settings": {
-        "separate_section_with_border": false,
-        "scrolling_speed": 0.1,
-        "scroll_direction": "left",
-        "pause_on_hover": true,
-        "text_font": "body",
-        "text_font_size_mobile": 10,
-        "text_font_size_desktop": 12,
-        "section_vertical_spacing_mobile": 10,
-        "section_vertical_spacing_desktop": 10,
-        "item_horizontal_spacing_mobile": 20,
-        "item_horizontal_spacing_desktop": 40,
-        "background": "#000000",
-        "text_color": "#ffffff"
+        "speed": 5,
+        "section_width": "page-width",
+        "color_scheme": "scheme-1",
+        "divider_width": 1,
+        "padding-block-start": 15,
+        "padding-block-end": 15
       }
     },
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "message_BYG78q": {
-          "type": "message",
-          "settings": {
-            "text": "Announce something here"
-          }
-        },
-        "message_gJbTnL": {
-          "type": "message",
-          "settings": {
-            "text": "<a href=\"https://stoxenergy.com/pages/shipping\" title=\"Shipping\"><strong>Free</strong> shipping on orders over €60*</a>"
-          }
-        }
-      },
-      "block_order": [
-        "message_BYG78q",
-        "message_gJbTnL"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "scheme-3",
-        "enable_sticky": false,
-        "autoplay": true,
-        "cycle_speed": 5,
-        "desktop_font_size": 11,
-        "mobile_font_size": 10
-      }
-    },
-    "header": {
+    "header_section": {
       "type": "header",
       "blocks": {
-        "mega_menu_mGyzrK": {
-          "type": "mega_menu",
+        "header-logo": {
+          "type": "_header-logo",
+          "static": true,
           "settings": {
-            "menu_item": "TIENDA",
-            "images_position": "right",
-            "image_1": "shopify://shop_images/hybrid_3d42de89-ba7a-4037-8961-6b3acf84c9ab.jpg",
-            "image_1_heading": "NEW HYBRID COLLECTION",
-            "image_1_text": "",
-            "image_1_link": "shopify://collections/hybrid",
-            "image_2": "shopify://shop_images/THE-TEMPO-TRIBE.jpg",
-            "image_2_heading": "RUNNING ESSENTIALS",
-            "image_2_text": "",
-            "image_2_link": "https://www.thetempotribe.com"
-          }
+            "hide_logo_on_home_page": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
-        "mega_menu_xaHBBx": {
-          "type": "mega_menu",
+        "header-menu": {
+          "type": "_header-menu",
+          "static": true,
           "settings": {
-            "menu_item": "",
-            "images_position": "right",
-            "image_1_heading": "",
-            "image_1_text": "",
-            "image_1_link": "",
-            "image_2_heading": "",
-            "image_2_text": "",
-            "image_2_link": ""
-          }
+            "menu": "main-menu",
+            "color_scheme": "",
+            "type_font_primary_size": "0.875rem",
+            "menu_font_style": "inverse",
+            "type_font_primary_link": "body",
+            "type_case_primary_link": "none",
+            "menu_style": "featured_products",
+            "featured_products_aspect_ratio": "4 / 5",
+            "featured_collections_aspect_ratio": "16 / 9",
+            "image_border_radius": 0,
+            "navigation_bar": false,
+            "color_scheme_navigation_bar": "",
+            "drawer_accordion": false,
+            "drawer_accordion_expand_first": false,
+            "drawer_dividers": false
+          },
+          "blocks": {}
         }
       },
-      "block_order": [
-        "mega_menu_mGyzrK",
-        "mega_menu_xaHBBx"
-      ],
       "settings": {
-        "color_scheme": "scheme-3",
-        "enable_sticky": true,
-        "hide_on_scroll": false,
-        "show_separation_border": true,
-        "reduce_padding": false,
-        "logo": "shopify://shop_images/logo.png",
-        "logo_max_width": 135,
-        "logo_mobile_max_width": 100,
-        "menu": "main-menu",
-        "sidebar_menu": "",
-        "menu_open_trigger": "hover",
-        "menu_text_font": "heading",
-        "enable_search": true,
-        "sidebar_color_scheme": "",
-        "sidebar_text_font": "heading",
-        "sidebar_show_dividers": true,
-        "sidebar_open_second_level_menus": false,
-        "layout": "logo_left_navigation_inline",
-        "show_icons": true,
-        "show_country_selector": false,
-        "show_country_name": false,
-        "show_country_flag": true,
-        "show_locale_selector": true,
-        "transparent_header_text_color": "#ffffff",
-        "transparent_logo": "shopify://shop_images/logo.png"
+        "logo_position": "left",
+        "menu_position": "left",
+        "menu_row": "top",
+        "show_search": true,
+        "search_position": "right",
+        "search_row": "top",
+        "show_country": true,
+        "country_selector_style": false,
+        "show_language": true,
+        "localization_font": "heading",
+        "localization_font_size": "0.875rem",
+        "localization_position": "right",
+        "localization_row": "top",
+        "section_width": "page-width",
+        "section_height": "standard",
+        "enable_sticky_header": "always",
+        "divider_width": 0,
+        "divider_size": "page-width",
+        "border_width": 0,
+        "color_scheme_top": "scheme-1",
+        "color_scheme_bottom": "",
+        "color_scheme_transparent": "scheme-6",
+        "enable_transparent_header_home": false,
+        "home_color_scheme": "inverse",
+        "enable_transparent_header_product": false,
+        "product_color_scheme": "default",
+        "enable_transparent_header_collection": false,
+        "collection_color_scheme": "default"
       }
     }
   },
   "order": [
-    "countdown_condensed_pFiVnc",
-    "scrolling_content_Lr9imf",
-    "announcement-bar",
-    "header"
+    "header_announcements_9jGBFp",
+    "header_section"
   ]
 }

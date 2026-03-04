@@ -1,1 +1,290 @@
-{"sections":{"2b73515d-f2a2-4806-b26e-9eff8e83adee":{"type":"slideshow","blocks":{"template--17593612468540__2b73515d-f2a2-4806-b26e-9eff8e83adee-16747196491d99dd8b-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/DSC01866.jpg","mobile_image":"shopify:\/\/shop_images\/landing_66d4754f-b213-4fc9-a907-4033e347d2c2.jpg","subheading":"NEW ICON PERFORMANCE","title":"ICON³ Essentials","mobile_text_position":"place-self-end-start text-start","desktop_text_position":"sm:place-self-end-center sm:text-center","content_max_width":400,"button_1_text":"view collection","button_1_link":"shopify:\/\/collections\/icon-running-socks","button_1_style":"outline","button_1_background":"#ffffff","button_1_text_color":"#1c1c1c","button_2_text":"find more","button_2_link":"shopify:\/\/pages\/calidad","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":0,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"}},"image_ggqY4F":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/cycle-chic.jpg","mobile_image":"shopify:\/\/shop_images\/mobile-cycle-chic.jpg","subheading":"","title":"CYCLING SOCKS","mobile_text_position":"place-self-end-start text-start","desktop_text_position":"sm:place-self-center sm:text-center","content_max_width":780,"button_1_text":"CYCLE CHIC","button_1_link":"shopify:\/\/collections\/cycling-tecnichal-socks","button_1_style":"solid","button_1_background":"#ffffff","button_1_text_color":"#000000","button_2_text":"","button_2_link":"shopify:\/\/collections\/cycling-socks","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":0,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"}},"template--17593612468540__2b73515d-f2a2-4806-b26e-9eff8e83adee-16747196491d99dd8b-1":{"type":"image","disabled":true,"settings":{"subheading":"Slide title","title":"Tell your story","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","content_max_width":780,"button_1_text":"","button_1_link":"","button_1_style":"solid","button_1_background":"#ffffff","button_1_text_color":"#000000","button_2_text":"","button_2_link":"","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":50,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(54, 54, 54, 0.2) 0%, rgba(4, 4, 4, 0.65) 100%)"}}},"block_order":["template--17593612468540__2b73515d-f2a2-4806-b26e-9eff8e83adee-16747196491d99dd8b-0","image_ggqY4F","template--17593612468540__2b73515d-f2a2-4806-b26e-9eff8e83adee-16747196491d99dd8b-1"],"settings":{"allow_transparent_header":true,"show_next_section_button":false,"media_size":"auto","show_initial_transition":false,"autoplay":true,"autoplay_pause_on_video":true,"cycle_speed":5,"background":"#000000","controls_color":"#ffffff"}},"slideshow":{"type":"slideshow","blocks":{"slide-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/FARTLEK.jpg","mobile_image":"shopify:\/\/shop_images\/Untitled-13.jpg","subheading":"","title":"NUEVO MODELO RUNNING FARTLEK","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","content_max_width":780,"button_1_text":"COMPRA YA","button_1_link":"shopify:\/\/products\/fartlek-pink-calcetin-running","button_1_style":"solid","button_1_background":"#ffffff","button_1_text_color":"#000000","button_2_text":"","button_2_link":"","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":50,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"}},"eeb4010d-d600-4307-a7df-907425bc30d0":{"type":"image","disabled":true,"settings":{"subheading":"Slide title","title":"Tell your story","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","content_max_width":780,"button_1_text":"","button_1_link":"","button_1_style":"solid","button_1_background":"#ffffff","button_1_text_color":"#000000","button_2_text":"","button_2_link":"","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":50,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(54, 54, 54, 0.2) 0%, rgba(4, 4, 4, 0.65) 100%)"}}},"block_order":["slide-1","eeb4010d-d600-4307-a7df-907425bc30d0"],"disabled":true,"settings":{"allow_transparent_header":true,"show_next_section_button":true,"media_size":"auto","show_initial_transition":false,"autoplay":true,"autoplay_pause_on_video":true,"cycle_speed":5,"background":"#000000","controls_color":"#ffffff"}},"featured-collections":{"type":"featured-collections","blocks":{"featured-collection-0":{"type":"collection","settings":{"collection":"new-collections","products_count":8,"title":"New arrivals","link_url":"shopify:\/\/collections\/on-vacation","link_text":""}}},"block_order":["featured-collection-0"],"settings":{"color_scheme":"scheme-2","separate_section_with_border":true,"hide_product_information":false,"stack_products":false,"products_per_row_mobile":"2","products_per_row_desktop":4,"horizontal_spacing_factor":1,"vertical_spacing_factor":1,"subheading":"Whether you're beach-bound, city-hopping, or just dreaming of your next getaway, our latest sock collection is designed to travel with you."}},"slideshow_nNiAy3":{"type":"slideshow","blocks":{"image_UEJiFk":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/FOTO-WINTER.jpg","mobile_image":"shopify:\/\/shop_images\/DSC09221_cf627feb-f12f-4f2f-aa71-8719c132cec1.jpg","subheading":"SUB 0 WINTER MERINO SOCKS","title":"","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-end-center sm:text-center","content_max_width":400,"button_1_text":"DAMN COLD","button_1_link":"shopify:\/\/products\/damn-cold-white-calcetin-ciclismo-lana-merino","button_1_style":"outline","button_1_background":"#ffffff","button_1_text_color":"#000000","button_2_text":"","button_2_link":"","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":50,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"}}},"block_order":["image_UEJiFk"],"settings":{"allow_transparent_header":true,"show_next_section_button":false,"media_size":"auto","show_initial_transition":false,"autoplay":true,"autoplay_pause_on_video":true,"cycle_speed":5,"background":"#000000","controls_color":"#ffffff"}},"featured_collections_JiqVct":{"type":"featured-collections","blocks":{"collection_UQwMRE":{"type":"collection","settings":{"collection":"hybrid","products_count":8,"title":"","link_url":"","link_text":""}}},"block_order":["collection_UQwMRE"],"settings":{"color_scheme":"scheme-2","separate_section_with_border":true,"hide_product_information":false,"stack_products":false,"products_per_row_mobile":"2","products_per_row_desktop":4,"horizontal_spacing_factor":1,"vertical_spacing_factor":1,"subheading":"SHOP HYBRID COLLECTION"}},"slideshow_6YBbkX":{"type":"slideshow","blocks":{"image_EVCAKR":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/HYBRID-COLL.jpg","mobile_image":"shopify:\/\/shop_images\/HZTL-HYBRID.jpg","subheading":"Style Without Limits","title":"","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-end-center sm:text-center","content_max_width":400,"button_1_text":"NEW HYBRID COLLECTION","button_1_link":"shopify:\/\/collections\/hybrid","button_1_style":"outline","button_1_background":"#ffffff","button_1_text_color":"#1c1c1c","button_2_text":"","button_2_link":"","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":50,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"}}},"block_order":["image_EVCAKR"],"settings":{"allow_transparent_header":true,"show_next_section_button":false,"media_size":"auto","show_initial_transition":false,"autoplay":true,"autoplay_pause_on_video":true,"cycle_speed":5,"background":"#000000","controls_color":"#ffffff"}},"collection-list":{"type":"collection-list","blocks":{"collection-0":{"type":"collection","settings":{"color_scheme":"","collection":"","image":"shopify:\/\/shop_images\/home-vlc-strong.jpg","expand_collection":false,"content_position":"place-self-end-center text-center","subheading":"","title":"","button_text":"DONATE","button_link":"shopify:\/\/collections\/valencia-dana-donation","button_style":"solid","overlay_color":"#000000","overlay_opacity":0}},"collection-1":{"type":"collection","settings":{"color_scheme":"","collection":"","image":"shopify:\/\/shop_images\/CAMI-RUN-PERFORMANCE.jpg","expand_collection":false,"content_position":"place-self-end-center text-center","subheading":"","title":"accesorios","button_text":"EXPLORE","button_link":"shopify:\/\/collections\/complementos","button_style":"solid","overlay_color":"#000000","overlay_opacity":0}},"collection-2":{"type":"collection","settings":{"color_scheme":"","collection":"","image":"shopify:\/\/shop_images\/ULTRALIGHT-RUN-SOCKS.jpg","expand_collection":false,"content_position":"place-self-end-center text-center","subheading":"","title":"ULTRALIGHT SOCKS","button_text":"VER CATEGORÍA","button_link":"shopify:\/\/collections\/triathlon-socks","button_style":"solid","overlay_color":"#000000","overlay_opacity":0}}},"block_order":["collection-0","collection-1","collection-2"],"disabled":true,"settings":{"color_scheme":"scheme-2","separate_section_with_border":true,"image_size":"sm","show_text_outside":false,"space_items":true,"stack_collections":true,"collections_per_row_mobile":"1","collections_per_row_desktop":3,"subheading":"","title":"","content":""}},"multiple_media_with_text_BgQ6gq":{"type":"multiple-media-with-text","blocks":{"image_jUqqLp":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/PITU.jpg","rotation":0}},"image_JKabYY":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/SOCK-505050.jpg","rotation":0}}},"block_order":["image_jUqqLp","image_JKabYY"],"settings":{"color_scheme":"scheme-2","reveal_on_scroll":true,"separate_section_with_border":true,"media_position_desktop":"before_text","media_position_mobile":"before_text","media_layout":"overlap","media_alignment":"center","media_alignment_offset":0,"media_mobile_alignment_offset":0,"text_alignment":"center","subheading":"CALCETINES 50 50 50","title":"por @pitufollow","content":"<p>Descubre el calcetín solidario que destina todos sus beneficios a una ONG (\"FUNDACIÓN JUEGATERAPIA Y SU LABOR CONTRA EL CÁNCER INFANTIL\"), apoyando así una causa benéfica mientras corres hacia tus objetivos.<\/p>","button_1_text":"EXPLORE","button_1_link":"shopify:\/\/products\/50-50-50-gold-calcetin-running","button_1_style":"solid","button_2_text":"","button_2_link":"","button_2_style":"solid"}},"multiple_media_with_text_HxH9t8":{"type":"multiple-media-with-text","blocks":{"image_cqNVCR":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/FULL.jpg","rotation":0}},"image_6rckEU":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/GOLF-SWING.jpg","rotation":0}}},"block_order":["image_cqNVCR","image_6rckEU"],"settings":{"color_scheme":"scheme-2","reveal_on_scroll":true,"separate_section_with_border":true,"media_position_desktop":"after_text","media_position_mobile":"before_text","media_layout":"separated","media_alignment":"center","media_alignment_offset":0,"media_mobile_alignment_offset":0,"text_alignment":"center","subheading":"","title":"PRO GOLF SOCKS","content":"<p>Diseñado para golfistas exigentes, este calcetín combina la suavidad y transpirabilidad del algodón con un ajuste perfecto que aporta comodidad durante todo el juego. Su refuerzo en zonas clave ofrece mayor durabilidad y estabilidad en cada swing, asegurando frescura y confort en el campo.<\/p>","button_1_text":"VER COLECCIÓN","button_1_link":"shopify:\/\/collections\/golf","button_1_style":"solid","button_2_text":"","button_2_link":"","button_2_style":"solid"}},"shop-the-look":{"type":"shop-the-look","blocks":{"look-0":{"type":"look","settings":{"image":"shopify:\/\/shop_images\/Untitled-14.jpg","hot_spots_background":"#ffffff","product_1":"born-to-run-orange-calcetin-running","product_1_horizontal_position":44,"product_1_vertical_position":49,"product_2":"born-to-run-yellow-calcetin-running","product_2_horizontal_position":45,"product_2_vertical_position":65,"product_3":"","product_3_horizontal_position":70,"product_3_vertical_position":50,"product_4":"","product_4_horizontal_position":85,"product_4_vertical_position":85}},"look_Y6rTNW":{"type":"look","disabled":true,"settings":{"hot_spots_background":"#ffffff","product_1":"","product_1_horizontal_position":55,"product_1_vertical_position":30,"product_2":"","product_2_horizontal_position":25,"product_2_vertical_position":40,"product_3":"","product_3_horizontal_position":65,"product_3_vertical_position":60,"product_4":"","product_4_horizontal_position":85,"product_4_vertical_position":85}},"look-1":{"type":"look","disabled":true,"settings":{"hot_spots_background":"#ffffff","product_1":"","product_1_horizontal_position":25,"product_1_vertical_position":45,"product_2":"","product_2_horizontal_position":55,"product_2_vertical_position":30,"product_3":"","product_3_horizontal_position":65,"product_3_vertical_position":60,"product_4":"","product_4_horizontal_position":85,"product_4_vertical_position":85}}},"block_order":["look-0","look_Y6rTNW","look-1"],"disabled":true,"settings":{"color_scheme":"scheme-2","separate_section_with_border":true,"subheading":"Shop","title":"Our looks","content":"","popover_title":"Shop the look"}},"blog-posts":{"type":"blog-posts","disabled":true,"settings":{"color_scheme":"","separate_section_with_border":true,"blog":"","posts_count":3,"stack_on_mobile":false,"show_category":false,"show_date":false,"show_excerpt":true,"show_read_more":true,"subheading":"","title":"Featured article","content":"","button_link":"shopify:\/\/blogs\/noticias","button_text":"View all articles"}},"multiple_media_with_text_pagEKk":{"type":"multiple-media-with-text","blocks":{"image_C7tAQq":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/DSC6707_4137f7b6-bd48-4a93-848a-9f0954f1d9bf.jpg","rotation":0}},"image_LfWbaU":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/DSC6457_f4890eb3-f0aa-48fd-b7a4-12a35d4344a0.jpg","rotation":0}}},"block_order":["image_C7tAQq","image_LfWbaU"],"disabled":true,"settings":{"color_scheme":"scheme-2","reveal_on_scroll":true,"separate_section_with_border":true,"media_position_desktop":"after_text","media_position_mobile":"before_text","media_layout":"separated","media_alignment":"center","media_alignment_offset":0,"media_mobile_alignment_offset":0,"text_alignment":"center","subheading":"MÁS DE 30.000 PARES VENDIDOS","title":"STAY MAGIC","content":"<p>Nuestro unicornio es ya un icono de la marca con un éxito mundial.<\/p>","button_1_text":"","button_1_link":"","button_1_style":"solid","button_2_text":"VER DISEÑO","button_2_link":"shopify:\/\/products\/stay-magic-calcetin-running","button_2_style":"solid"}},"media_grid_NDqeYq":{"type":"media-grid","blocks":{"image_qDXGph":{"type":"image","settings":{"color_scheme":"","image":"shopify:\/\/shop_images\/DSC6426_14509ba3-f929-48c9-b0e7-75bfb6b2d484.jpg","column_count":"8","row_count":2,"title":"stay magic","heading_tag":"h4","content":"<p>RUNNING PERFORMANCE <\/p>","link_text":"","link_url":"","link_style":"link","text_position":"place-self-center text-center","overlay_color":"#000000","overlay_opacity":0}},"image_VB3ahz":{"type":"image","settings":{"color_scheme":"","image":"shopify:\/\/shop_images\/DSC09354.jpg","column_count":"4","row_count":1,"title":"","heading_tag":"h4","content":"","link_text":"","link_url":"","link_style":"link","text_position":"place-self-center text-center","overlay_color":"#000000","overlay_opacity":0}},"image_XwVFCj":{"type":"image","settings":{"color_scheme":"","image":"shopify:\/\/shop_images\/HotRunning3.jpg","column_count":"4","row_count":1,"title":"","heading_tag":"h4","content":"","link_text":"","link_url":"","link_style":"link","text_position":"place-self-center text-center","overlay_color":"#000000","overlay_opacity":0}}},"block_order":["image_qDXGph","image_VB3ahz","image_XwVFCj"],"disabled":true,"settings":{"color_scheme":"scheme-2","separate_section_with_border":true,"desktop_row_height":290,"mobile_row_height":180,"section_width":"lg","spacing":"md","subheading":"","title":"<strong>MOST WANTED<\/strong>","content":""}},"slideshow_g3NGfY":{"type":"slideshow","blocks":{"image_XbXenJ":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/cafe.jpg","mobile_image":"shopify:\/\/shop_images\/cafe.jpg","subheading":"Made for Coffee Lovers: Designed with your daily ritual in mind.","title":"capuccino cup","mobile_text_position":"place-self-center-start text-start","desktop_text_position":"sm:place-self-center sm:text-center","content_max_width":780,"button_1_text":"view more","button_1_link":"","button_1_style":"outline","button_1_background":"#ffffff","button_1_text_color":"#1c1c1c","button_2_text":"","button_2_link":"","button_2_style":"outline","button_2_background":"#ffffff","button_2_text_color":"#000000","background":"","background_opacity":50,"text_color":"#ffffff","border_color":"","gradient_overlay":"linear-gradient(180deg, rgba(NaN, NaN, NaN, 0), rgba(4, 4, 4, 0.65) 100%)"}}},"block_order":["image_XbXenJ"],"settings":{"allow_transparent_header":true,"show_next_section_button":false,"media_size":"auto","show_initial_transition":false,"autoplay":true,"autoplay_pause_on_video":true,"cycle_speed":5,"background":"#000000","controls_color":"#ffffff"}}},"order":["2b73515d-f2a2-4806-b26e-9eff8e83adee","slideshow","featured-collections","slideshow_nNiAy3","featured_collections_JiqVct","slideshow_6YBbkX","collection-list","multiple_media_with_text_BgQ6gq","multiple_media_with_text_HxH9t8","shop-the-look","blog-posts","multiple_media_with_text_pagEKk","media_grid_NDqeYq","slideshow_g3NGfY"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "hero_jVaWmY": {
+      "type": "hero",
+      "blocks": {
+        "text_YLPk4p": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p>Browse our latest products</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_H9gpTf": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop all",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_YLPk4p",
+        "button_H9gpTf"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "flex-end",
+        "align_baseline": true,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 24,
+        "section_width": "page-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-6",
+        "toggle_overlay": true,
+        "overlay_color": "#12121266",
+        "overlay_style": "solid",
+        "gradient_direction": "to bottom",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 100,
+        "padding-block-end": 72
+      }
+    },
+    "product_list_fa6P9H": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_YFtzcL": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_MWeP9V": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_YFtzcL",
+            "product_list_button_MWeP9V"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 4,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_677WP3": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_YXxMTj": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_JQzVV4": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_677WP3",
+            "product_title_YXxMTj",
+            "price_JQzVV4"
+          ]
+        }
+      },
+      "name": "Featured collection",
+      "settings": {
+        "collection": "all",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 8,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    }
+  },
+  "order": [
+    "hero_jVaWmY",
+    "product_list_fa6P9H"
+  ]
+}
