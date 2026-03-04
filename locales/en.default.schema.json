@@ -1212,10 +1212,5 @@
     "what_is_return_policy": "What is the return policy?",
     "when_will_order_arrive": "When will I get my order?",
     "where_are_products_made": "Where are your products manufactured?"
-  },
-  "global": {
-    "colors": {
-      "scheme": "Color scheme"
-    }
   }
 }
