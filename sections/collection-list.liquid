@@ -33,7 +33,6 @@
     section-resource-list
     spacing-style
     gap-style
-    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' and has_carousel_nav_block == false %}section-resource-list--carousel-nav-header-end{% endif %}
   "
   style="
     {% render 'spacing-style', settings: section.settings %}
@@ -41,8 +40,13 @@
   "
   data-testid="collection-list"
 >
-  <div class="section-resource-list__content">
-    {%- content_for 'blocks' -%}
+  <div class="section-resource-list__content {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}section-resource-list__content--nav-end{% endif %}">
+    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' and has_carousel_nav_block == false %}
+      <div class="section-resource-list__content-inner">{%- content_for 'blocks' -%}</div>
+      <div class="collection-list-carousel-nav-slot" data-carousel-nav-slot="collectionList" aria-hidden="true"></div>
+    {% else %}
+      {%- content_for 'blocks' -%}
+    {% endif %}
   </div>
 
   {% if section_collections == null %}
@@ -81,54 +85,22 @@
 </div>
 
 {% stylesheet %}
-  .section-resource-list--carousel-nav-header-end {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto 1fr;
-    align-items: start;
-    gap: var(--section-stack-gap, 1.5rem);
+  /* Encabezado con navegación a la derecha (slot por defecto o bloque) */
+  .section-resource-list__content--nav-end {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
-  .section-resource-list--carousel-nav-header-end .section-resource-list__content {
-    grid-column: 1;
-    grid-row: 1;
+  .section-resource-list__content--nav-end .section-resource-list__content-inner {
+    flex: 1 1 auto;
     min-width: 0;
   }
 
-  .section-resource-list--carousel-nav-header-end .resource-list {
-    display: contents;
-  }
-
-  .section-resource-list--carousel-nav-header-end .resource-list__carousel {
-    display: contents;
-  }
-
-  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-component {
-    display: contents;
-  }
-
-  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-container {
-    display: contents;
-  }
-
-  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-arrows {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: center;
-    margin-block: 0;
-  }
-
-  .section-resource-list--carousel-nav-header-end .resource-list__carousel slideshow-slides {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  /* Cuando la navegación está en un bloque, no usar grid */
-  .section-resource-list--carousel-nav-header-end.section-resource-list--carousel-nav-in-block {
-    display: block;
-  }
-
-  .section-resource-list--carousel-nav-in-block .collection-list-carousel-nav-slot {
+  .section-resource-list__content--nav-end .collection-list-carousel-nav-slot {
+    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
@@ -148,12 +120,13 @@
         const arrows = slideshow.querySelector('slideshow-arrows');
         if (!arrows) return;
         slot.appendChild(arrows);
-        section.classList.add('section-resource-list--carousel-nav-in-block');
+        slot.removeAttribute('aria-hidden');
       }
+      function run() { setTimeout(moveCarouselNav, 0); }
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', moveCarouselNav);
+        document.addEventListener('DOMContentLoaded', run);
       } else {
-        moveCarouselNav();
+        run();
       }
     })();
   </script>
