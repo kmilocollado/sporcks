@@ -42,10 +42,12 @@
 >
   <div class="section-resource-list__content {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}section-resource-list__content--nav-end{% endif %}">
     {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' and has_carousel_nav_block == false %}
-      <div class="section-resource-list__content-inner">{%- content_for 'blocks' -%}</div>
+      <div class="section-resource-list__content-inner">
+    {% endif %}
+    {%- content_for 'blocks' -%}
+    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' and has_carousel_nav_block == false %}
+      </div>
       <div class="collection-list-carousel-nav-slot" data-carousel-nav-slot="collectionList" aria-hidden="true"></div>
-    {% else %}
-      {%- content_for 'blocks' -%}
     {% endif %}
   </div>
 
