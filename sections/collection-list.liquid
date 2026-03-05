@@ -112,19 +112,40 @@
 {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}
   <script>
     (function() {
-      function moveCarouselNav() {
+      function initCarouselNavSlot() {
         const section = document.querySelector('[data-testid="collection-list"]')?.closest('.shopify-section');
         if (!section) return;
         const slot = section.querySelector('[data-carousel-nav-slot="collectionList"]');
         if (!slot) return;
         const slideshow = section.querySelector('slideshow-component[ref="collectionList"]');
         if (!slideshow) return;
-        const arrows = slideshow.querySelector('slideshow-arrows');
-        if (!arrows) return;
-        slot.appendChild(arrows);
+        const originalArrows = slideshow.querySelector('slideshow-arrows');
+        if (!originalArrows) return;
+
+        var clone = originalArrows.cloneNode(true);
+        var prevBtn = clone.querySelector('[ref="previous"], .slideshow-control--previous');
+        var nextBtn = clone.querySelector('[ref="next"], .slideshow-control--next');
+        if (!prevBtn || !nextBtn) return;
+
+        prevBtn.removeAttribute('on:click');
+        nextBtn.removeAttribute('on:click');
+        prevBtn.addEventListener('click', function(e) { e.preventDefault(); slideshow.previous(); syncDisabled(); });
+        nextBtn.addEventListener('click', function(e) { e.preventDefault(); slideshow.next(); syncDisabled(); });
+
+        function syncDisabled() {
+          var origPrev = originalArrows.querySelector('[ref="previous"], .slideshow-control--previous');
+          var origNext = originalArrows.querySelector('[ref="next"], .slideshow-control--next');
+          if (origPrev) prevBtn.disabled = origPrev.disabled;
+          if (origNext) nextBtn.disabled = origNext.disabled;
+        }
+        slot.appendChild(clone);
         slot.removeAttribute('aria-hidden');
+        originalArrows.style.display = 'none';
+        syncDisabled();
+        var mo = new MutationObserver(syncDisabled);
+        mo.observe(originalArrows, { attributes: true, attributeFilter: ['disabled'], subtree: true });
       }
-      function run() { setTimeout(moveCarouselNav, 0); }
+      function run() { setTimeout(initCarouselNavSlot, 50); }
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', run);
       } else {
