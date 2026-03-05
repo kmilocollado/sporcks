@@ -1,8 +1,7 @@
 {%- comment -%}
-  Bloque que reserva el lugar donde se mostrará la navegación del carrusel (flechas).
-  Solo tiene efecto en la sección Lista de colecciones con diseño Carrusel y
-  "Posición de la navegación" en "Extremo derecho del encabezado".
-  Añade este bloque dentro del grupo donde está tu encabezado para que las flechas aparezcan ahí.
+  Bloque de navegación del carrusel (flechas). Añádelo donde quieras en la sección
+  Lista de colecciones (arriba, junto al encabezado, abajo, etc.) y reordénalo con los demás bloques.
+  Solo tiene efecto cuando el diseño es Carrusel y "Posición de la navegación" es "Extremo derecho del encabezado".
 {%- endcomment -%}
 {%- if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' -%}
   <div

@@ -13,6 +13,14 @@
   elsif section.settings.layout_type == 'grid'
     assign max_items = section.settings.columns
   endif
+
+  assign has_carousel_nav_block = false
+  for block in section.blocks
+    if block.type == '_collection-list-carousel-nav'
+      assign has_carousel_nav_block = true
+      break
+    endif
+  endfor
 %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -25,7 +33,7 @@
     section-resource-list
     spacing-style
     gap-style
-    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}section-resource-list--carousel-nav-header-end{% endif %}
+    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' and has_carousel_nav_block == false %}section-resource-list--carousel-nav-header-end{% endif %}
   "
   style="
     {% render 'spacing-style', settings: section.settings %}
@@ -185,6 +193,9 @@
     },
     {
       "type": "_divider"
+    },
+    {
+      "type": "_collection-list-carousel-nav"
     }
   ],
   "disabled_on": {
