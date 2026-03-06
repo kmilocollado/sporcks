@@ -87,6 +87,11 @@
   .section-{{ section.id }} slideshow-arrows .slideshow-control {
     opacity: 1;
   }
+  .section-{{ section.id }} .resource-list__carousel .slideshow-control[disabled] {
+    display: block;
+    opacity: 0.3;
+    pointer-events: auto;
+  }
   @media screen and (min-width: 1025px) {
     .section-{{ section.id }} slideshow-arrows {
       position: relative;
