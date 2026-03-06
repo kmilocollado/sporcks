@@ -442,14 +442,18 @@ export class Slideshow extends Component {
 
   get previousIndex() {
     const { current, visibleSlides } = this;
-    const modifier = visibleSlides.length > 1 ? visibleSlides.length : 1;
+    const step = this.getAttribute('scroll-step');
+    const modifier =
+      step === '1' ? 1 : visibleSlides.length > 1 ? visibleSlides.length : 1;
 
     return current - modifier;
   }
 
   get nextIndex() {
     const { current, visibleSlides } = this;
-    const modifier = visibleSlides.length > 1 ? visibleSlides.length : 1;
+    const step = this.getAttribute('scroll-step');
+    const modifier =
+      step === '1' ? 1 : visibleSlides.length > 1 ? visibleSlides.length : 1;
 
     return current + modifier;
   }

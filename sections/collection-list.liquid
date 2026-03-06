@@ -20,7 +20,7 @@
 
 <div
   class="
-    section
+    section section-{% section.id %}
     section--{{ section.settings.section_width }}
     color-{{ section.settings.color_scheme }}
     section-resource-list
@@ -82,6 +82,20 @@
     carousel_icons_shape: carousel_icons_shape
   %}
 </div>
+
+<style>
+  .section-{% section.id %} slideshow-arrows {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+    margin-bottom: 30px;
+    margin-top: -55px;
+  }
+  .slideshow-control {
+    margin: 0;
+  }
+</style>
 
 {% schema %}
 {
