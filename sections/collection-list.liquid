@@ -37,7 +37,9 @@
     {%- if section.settings.layout_type == 'carousel' -%}
       <div class="collection-list-carousel-header">
         <div class="collection-list-carousel-header__title">
-          {%- content_for 'blocks' -%}
+    {%- endif -%}
+    {%- content_for 'blocks' -%}
+    {%- if section.settings.layout_type == 'carousel' -%}
         </div>
         <div
           class="collection-list-carousel-nav-slot collection-list-carousel-header__nav"
@@ -45,8 +47,6 @@
           aria-hidden="true"
         ></div>
       </div>
-    {%- else -%}
-      {%- content_for 'blocks' -%}
     {%- endif -%}
   </div>
 
