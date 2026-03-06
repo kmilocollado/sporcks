@@ -84,16 +84,18 @@
 </div>
 
 <style>
-  .section-{{ section.id }} slideshow-arrows {
-    position: relative;
-    display: flex;
-    justify-content: end;
-    gap: 30px;
-    margin-bottom: 30px;
-    margin-top: -55px;
-  }
-  .section-{{ section.id }} .slideshow-control {
-    margin: 0;
+  @media screen and (min-width: 1025px) {
+    .section-{{ section.id }} slideshow-arrows {
+      position: relative;
+      display: flex;
+      justify-content: end;
+      gap: 30px;
+      margin-bottom: 30px;
+      margin-top: -65px;
+    }
+    .section-{{ section.id }} .slideshow-control {
+      margin: 0 !important;
+    }
   }
 </style>
 
