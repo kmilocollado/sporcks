@@ -58,7 +58,7 @@
 
   {% liquid
     assign list_items_array = list_items | strip | split: '<!--@list/split-->'
-    assign carousel_icons_style = 'arrow'
+    assign carousel_icons_style = 'none'
     assign carousel_icons_shape = 'none'
     for block in section.blocks
       if block.type == '_collection-list-carousel-nav'
@@ -146,33 +146,6 @@
     },
     {
       "type": "@app"
-    },
-    {
-      "type": "text"
-    },
-    {
-      "type": "icon"
-    },
-    {
-      "type": "image"
-    },
-    {
-      "type": "button"
-    },
-    {
-      "type": "video"
-    },
-    {
-      "type": "group"
-    },
-    {
-      "type": "spacer"
-    },
-    {
-      "type": "_divider"
-    },
-    {
-      "type": "_collection-list-carousel-nav"
     }
   ],
   "disabled_on": {
