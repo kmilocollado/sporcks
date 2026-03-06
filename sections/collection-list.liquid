@@ -34,6 +34,14 @@
   data-testid="collection-list"
 >
   <div class="section-resource-list__content">
+    {%- if section.settings.title != blank -%}
+      <div
+        class="collection-list__title text-block {{ section.settings.title_type_preset }}"
+        style="{% render 'typography-style', settings: section.settings, preset: section.settings.title_type_preset %} --text-align: {{ section.settings.title_alignment }};"
+      >
+        {{ section.settings.title }}
+      </div>
+    {%- endif -%}
     {%- content_for 'blocks' -%}
   </div>
 
@@ -95,6 +103,41 @@
       "type": "collection_list",
       "id": "collection_list",
       "label": "t:settings.collection_list"
+    },
+    {
+      "type": "header",
+      "content": "t:names.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:settings.title"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "select",
+      "id": "title_type_preset",
+      "label": "t:settings.preset",
+      "options": [
+        { "value": "rte", "label": "t:options.default" },
+        { "value": "paragraph", "label": "t:options.paragraph" },
+        { "value": "h1", "label": "t:options.h1" },
+        { "value": "h2", "label": "t:options.h2" },
+        { "value": "h3", "label": "t:options.h3" },
+        { "value": "h4", "label": "t:options.h4" },
+        { "value": "h5", "label": "t:options.h5" },
+        { "value": "h6", "label": "t:options.h6" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text_alignment",
+      "id": "title_alignment",
+      "label": "t:settings.alignment",
+      "default": "left"
     },
     {
       "type": "header",
