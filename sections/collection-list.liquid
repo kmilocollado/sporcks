@@ -14,13 +14,6 @@
     assign max_items = section.settings.columns
   endif
 
-  assign has_carousel_nav_block = false
-  for block in section.blocks
-    if block.type == '_collection-list-carousel-nav'
-      assign has_carousel_nav_block = true
-      break
-    endif
-  endfor
 %}
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
@@ -40,15 +33,8 @@
   "
   data-testid="collection-list"
 >
-  <div class="section-resource-list__content {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}section-resource-list__content--nav-end{% endif %}">
-    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' and has_carousel_nav_block == false %}
-      <div class="section-resource-list__content-inner">
-    {% endif %}
+  <div class="section-resource-list__content">
     {%- content_for 'blocks' -%}
-    {% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' and has_carousel_nav_block == false %}
-      </div>
-      <div class="collection-list-carousel-nav-slot" data-carousel-nav-slot="collectionList" aria-hidden="true"></div>
-    {% endif %}
   </div>
 
   {% if section_collections == null %}
@@ -87,29 +73,14 @@
 </div>
 
 {% stylesheet %}
-  /* Encabezado con navegación a la derecha (slot por defecto o bloque) */
-  .section-resource-list__content--nav-end {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .section-resource-list__content--nav-end .section-resource-list__content-inner {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-
-  .section-resource-list__content--nav-end .collection-list-carousel-nav-slot {
-    flex-shrink: 0;
+  .collection-list-carousel-nav-slot {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
   }
 {% endstylesheet %}
 
-{% if section.settings.layout_type == 'carousel' and section.settings.carousel_nav_position == 'header_end' %}
+{% if section.settings.layout_type == 'carousel' %}
   <script>
     (function() {
       function initCarouselNavSlot() {
@@ -379,23 +350,6 @@
       ],
       "default": "none",
       "visible_if": "{{ section.settings.icons_style != 'none' and section.settings.layout_type == 'carousel' or section.settings.carousel_on_mobile == true }}"
-    },
-    {
-      "type": "select",
-      "id": "carousel_nav_position",
-      "label": "t:settings.carousel_nav_position",
-      "options": [
-        {
-          "value": "inline",
-          "label": "t:options.carousel_nav_inline"
-        },
-        {
-          "value": "header_end",
-          "label": "t:options.carousel_nav_header_end"
-        }
-      ],
-      "default": "inline",
-      "visible_if": "{{ section.settings.layout_type == 'carousel' }}"
     },
     {
       "type": "header",
