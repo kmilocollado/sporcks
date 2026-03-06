@@ -61,7 +61,7 @@
     assign carousel_icons_style = 'none'
     assign carousel_icons_shape = 'none'
     for block in section.blocks
-      if block.type == '_collection-list-carousel-nav'
+      if block.type == 'collection-list-carousel-nav'
         assign carousel_icons_style = block.settings.icons_style | default: 'arrow'
         assign carousel_icons_shape = block.settings.icons_shape | default: 'none'
         break
