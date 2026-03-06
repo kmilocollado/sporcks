@@ -20,11 +20,11 @@
 
 <div
   class="
-    section section-{% section.id %}
+    section section-{{ section.id }}
     section--{{ section.settings.section_width }}
     color-{{ section.settings.color_scheme }}
     section-resource-list
-    spacing-style
+    spacing-style 
     gap-style
   "
   style="
@@ -84,7 +84,7 @@
 </div>
 
 <style>
-  .section-{% section.id %} slideshow-arrows {
+  .section-{{ section.id }} slideshow-arrows {
     position: relative;
     display: flex;
     justify-content: end;
