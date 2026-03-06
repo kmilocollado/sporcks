@@ -34,13 +34,33 @@
   data-testid="collection-list"
 >
   <div class="section-resource-list__content">
-    {%- if section.settings.title != blank -%}
-      <div
-        class="collection-list__title text-block {{ section.settings.title_type_preset }}"
-        style="{% render 'typography-style', settings: section.settings, preset: section.settings.title_type_preset %} --text-align: {{ section.settings.title_alignment }};"
-      >
-        {{ section.settings.title }}
+    {%- if section.settings.layout_type == 'carousel' -%}
+      <div class="collection-list-carousel-header">
+        <div class="collection-list-carousel-header__title">
+          {%- if section.settings.title != blank -%}
+            <div
+              class="collection-list__title text-block {{ section.settings.title_type_preset }}"
+              style="{% render 'typography-style', settings: section.settings, preset: section.settings.title_type_preset %} --text-align: {{ section.settings.title_alignment }};"
+            >
+              {{ section.settings.title }}
+            </div>
+          {%- endif -%}
+        </div>
+        <div
+          class="collection-list-carousel-nav-slot collection-list-carousel-header__nav"
+          data-carousel-nav-slot="collectionList"
+          aria-hidden="true"
+        ></div>
       </div>
+    {%- else -%}
+      {%- if section.settings.title != blank -%}
+        <div
+          class="collection-list__title text-block {{ section.settings.title_type_preset }}"
+          style="{% render 'typography-style', settings: section.settings, preset: section.settings.title_type_preset %} --text-align: {{ section.settings.title_alignment }};"
+        >
+          {{ section.settings.title }}
+        </div>
+      {%- endif -%}
     {%- endif -%}
     {%- content_for 'blocks' -%}
   </div>
@@ -82,6 +102,75 @@
     carousel_icons_shape: carousel_icons_shape
   %}
 </div>
+
+{% stylesheet %}
+  .collection-list-carousel-nav-slot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .collection-list-carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .collection-list-carousel-header__title {
+    flex: 1;
+    min-width: 0;
+  }
+  .collection-list-carousel-header__nav {
+    flex-shrink: 0;
+  }
+{% endstylesheet %}
+
+{% if section.settings.layout_type == 'carousel' %}
+  <script>
+    (function() {
+      function initCarouselNavSlot() {
+        const section = document.querySelector('[data-testid="collection-list"]')?.closest('.shopify-section');
+        if (!section) return;
+        const slot = section.querySelector('[data-carousel-nav-slot="collectionList"]');
+        if (!slot) return;
+        const slideshow = section.querySelector('slideshow-component[ref="collectionList"]');
+        if (!slideshow) return;
+        const originalArrows = slideshow.querySelector('slideshow-arrows');
+        if (!originalArrows) return;
+
+        var clone = originalArrows.cloneNode(true);
+        var prevBtn = clone.querySelector('[ref="previous"], .slideshow-control--previous');
+        var nextBtn = clone.querySelector('[ref="next"], .slideshow-control--next');
+        if (!prevBtn || !nextBtn) return;
+
+        prevBtn.removeAttribute('on:click');
+        nextBtn.removeAttribute('on:click');
+        prevBtn.addEventListener('click', function(e) { e.preventDefault(); slideshow.previous(); syncDisabled(); });
+        nextBtn.addEventListener('click', function(e) { e.preventDefault(); slideshow.next(); syncDisabled(); });
+
+        function syncDisabled() {
+          var origPrev = originalArrows.querySelector('[ref="previous"], .slideshow-control--previous');
+          var origNext = originalArrows.querySelector('[ref="next"], .slideshow-control--next');
+          if (origPrev) prevBtn.disabled = origPrev.disabled;
+          if (origNext) nextBtn.disabled = origNext.disabled;
+        }
+        slot.appendChild(clone);
+        slot.removeAttribute('aria-hidden');
+        originalArrows.style.display = 'none';
+        syncDisabled();
+        var mo = new MutationObserver(syncDisabled);
+        mo.observe(originalArrows, { attributes: true, attributeFilter: ['disabled'], subtree: true });
+      }
+      function run() { setTimeout(initCarouselNavSlot, 50); }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+      } else {
+        run();
+      }
+    })();
+  </script>
+{% endif %}
 
 {% schema %}
 {
