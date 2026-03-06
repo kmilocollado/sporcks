@@ -806,10 +806,10 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-block-start": 30,
+            "padding-block-end": 30,
+            "padding-inline-start": 20,
+            "padding-inline-end": 20
           },
           "blocks": {
             "product_card_gallery_rfpwyY": {
@@ -901,7 +901,7 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
-        "collection": "buy-2-pay-30",
+        "collection": "golf",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,
