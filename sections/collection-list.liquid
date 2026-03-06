@@ -131,18 +131,18 @@
     (function() {
       function initCarouselNavSlot() {
         const section = document.querySelector('[data-testid="collection-list"]')?.closest('.shopify-section');
-        if (!section) return;
+        if (!section) return false;
         const slot = section.querySelector('[data-carousel-nav-slot="collectionList"]');
-        if (!slot) return;
+        if (!slot || slot.children.length > 0) return false;
         const slideshow = section.querySelector('slideshow-component[ref="collectionList"]');
-        if (!slideshow) return;
+        if (!slideshow) return false;
         const originalArrows = slideshow.querySelector('slideshow-arrows');
-        if (!originalArrows) return;
+        if (!originalArrows) return false;
 
         var clone = originalArrows.cloneNode(true);
         var prevBtn = clone.querySelector('[ref="previous"], .slideshow-control--previous');
         var nextBtn = clone.querySelector('[ref="next"], .slideshow-control--next');
-        if (!prevBtn || !nextBtn) return;
+        if (!prevBtn || !nextBtn) return false;
 
         prevBtn.removeAttribute('on:click');
         nextBtn.removeAttribute('on:click');
@@ -161,13 +161,28 @@
         syncDisabled();
         var mo = new MutationObserver(syncDisabled);
         mo.observe(originalArrows, { attributes: true, attributeFilter: ['disabled'], subtree: true });
+        return true;
       }
-      function run() { setTimeout(initCarouselNavSlot, 50); }
+      function run() {
+        var attempts = 0;
+        var maxAttempts = 20;
+        function tryInit() {
+          if (initCarouselNavSlot()) return;
+          attempts++;
+          if (attempts < maxAttempts) setTimeout(tryInit, 150);
+        }
+        setTimeout(tryInit, 50);
+      }
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', run);
       } else {
         run();
       }
+      document.addEventListener('shopify:section:load', function(ev) {
+        if (ev.detail && ev.detail.sectionId && document.querySelector('.shopify-section[id="shopify-section-' + ev.detail.sectionId + '"] [data-testid="collection-list"]')) {
+          setTimeout(run, 0);
+        }
+      });
     })();
   </script>
 {% endif %}
