@@ -22,8 +22,10 @@
     assign gutter_style = '--gutter-slide-width: 0px;'
   endif
 
+  assign icon_style = icons_style | default: settings.icons_style | default: 'arrow'
+  assign icon_shape = icons_shape | default: settings.icons_shape | default: 'none'
   assign show_arrows = false
-  if settings.icons_style != 'none'
+  if icon_style != 'none'
     assign show_arrows = true
   endif
 %}
@@ -47,8 +49,8 @@
     class: 'resource-list__carousel',
     slides: slides,
     show_arrows: show_arrows,
-    icon_style: settings.icons_style,
-    icon_shape: settings.icons_shape,
+    icon_style: icon_style,
+    icon_shape: icon_shape,
     auto_hide_controls: false,
     infinite: false,
     initial_slide: 0,

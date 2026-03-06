@@ -57,8 +57,16 @@
   {% endcapture %}
 
   {% liquid
-    # Create an array from the list items to be used for different layout types
     assign list_items_array = list_items | strip | split: '<!--@list/split-->'
+    assign carousel_icons_style = 'arrow'
+    assign carousel_icons_shape = 'none'
+    for block in section.blocks
+      if block.type == '_collection-list-carousel-nav'
+        assign carousel_icons_style = block.settings.icons_style | default: 'arrow'
+        assign carousel_icons_shape = block.settings.icons_shape | default: 'none'
+        break
+      endif
+    endfor
   %}
 
   {% render 'resource-list',
@@ -68,7 +76,9 @@
     carousel_ref: 'collectionList',
     slide_count: max_items,
     content_type: 'collections',
-    test_id: 'collections-list-grid'
+    test_id: 'collections-list-grid',
+    carousel_icons_style: carousel_icons_style,
+    carousel_icons_shape: carousel_icons_shape
   %}
 </div>
 
@@ -295,56 +305,6 @@
       "step": 1,
       "default": 4,
       "visible_if": "{{ section.settings.layout_type == 'editorial' }}"
-    },
-    {
-      "type": "select",
-      "id": "icons_style",
-      "label": "t:settings.icon",
-      "options": [
-        {
-          "value": "arrow",
-          "label": "t:options.arrows"
-        },
-        {
-          "value": "chevron",
-          "label": "t:options.chevrons"
-        },
-        {
-          "value": "arrows_large",
-          "label": "t:options.arrows_large"
-        },
-        {
-          "value": "chevron_large",
-          "label": "t:options.chevron_large"
-        },
-        {
-          "value": "none",
-          "label": "t:options.none"
-        }
-      ],
-      "default": "arrow",
-      "visible_if": "{{ section.settings.layout_type == 'carousel' or section.settings.carousel_on_mobile == true }}"
-    },
-    {
-      "type": "select",
-      "id": "icons_shape",
-      "label": "t:settings.icon_background",
-      "options": [
-        {
-          "value": "none",
-          "label": "t:options.none"
-        },
-        {
-          "value": "circle",
-          "label": "t:options.circle"
-        },
-        {
-          "value": "square",
-          "label": "t:options.square"
-        }
-      ],
-      "default": "none",
-      "visible_if": "{{ section.settings.icons_style != 'none' and section.settings.layout_type == 'carousel' or section.settings.carousel_on_mobile == true }}"
     },
     {
       "type": "header",
@@ -647,8 +607,6 @@
         "mobile_columns": "2",
         "columns_gap": 8,
         "rows_gap": 8,
-        "icons_style": "arrow",
-        "icons_shape": "none",
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "",
@@ -773,8 +731,6 @@
         "mobile_columns": "2",
         "columns_gap": 8,
         "rows_gap": 8,
-        "icons_style": "arrow",
-        "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "",
@@ -928,8 +884,6 @@
         "bento_gap": 8,
         "rows_gap": 8,
         "max_collections": 4,
-        "icons_style": "arrow",
-        "icons_shape": "none",
         "section_width": "page-width",
         "gap": 64,
         "color_scheme": "",

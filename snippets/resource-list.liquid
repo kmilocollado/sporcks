@@ -42,6 +42,8 @@
   assign slide_count = slide_count | default: 0
   assign content_type = content_type | default: 'collections'
   assign test_id = test_id | default: ''
+  assign carousel_icons_style = carousel_icons_style | default: settings.icons_style | default: 'arrow'
+  assign carousel_icons_shape = carousel_icons_shape | default: settings.icons_shape | default: 'none'
 
   unless settings != empty
     echo '<!-- Error: settings parameter required for resource-list snippet -->'
@@ -124,7 +126,9 @@
         slides: list_items_array,
         slide_count: slide_count,
         settings: settings,
-        slide_width_max: slide_width_max
+        slide_width_max: slide_width_max,
+        icons_style: carousel_icons_style,
+        icons_shape: carousel_icons_shape
       %}
 
     {% when 'editorial' %}
@@ -170,7 +174,9 @@
       slides: list_items_array,
       slide_count: slide_count,
       settings: settings,
-      slide_width_max: slide_width_max
+      slide_width_max: slide_width_max,
+      icons_style: carousel_icons_style,
+      icons_shape: carousel_icons_shape
     %}
   </div>
 {% endif %}
