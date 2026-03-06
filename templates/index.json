@@ -457,14 +457,15 @@
               },
               "blocks": {}
             },
-            "text_QKMkJq": {
+            "text_VFqy8K": {
               "type": "text",
+              "name": "t:names.text",
               "settings": {
-                "text": "<h3>Novedades</h3>",
+                "text": "<p>Creamos cosas que funcionan mejor y duran más. Nuestros productos resuelven problemas reales con un diseño limpio y materiales honestos.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h3",
+                "alignment": "left",
+                "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -488,7 +489,7 @@
               "settings": {
                 "icon": "caret",
                 "dividers": true,
-                "type_preset": "h6",
+                "type_preset": "h4",
                 "inherit_color_scheme": true,
                 "color_scheme": "",
                 "border": "none",
@@ -507,7 +508,8 @@
                     "heading": "Política de devoluciones",
                     "open_by_default": true,
                     "icon": "none",
-                    "width": 20
+                    "image_upload": "shopify://shop_images/favicon.png",
+                    "width": 26
                   },
                   "blocks": {
                     "text_VeHqtV": {
@@ -546,7 +548,8 @@
                     "heading": "Envío",
                     "open_by_default": false,
                     "icon": "none",
-                    "width": 20
+                    "image_upload": "shopify://shop_images/favicon.png",
+                    "width": 26
                   },
                   "blocks": {
                     "text_4FRHe8": {
@@ -585,7 +588,8 @@
                     "heading": "Fabricación",
                     "open_by_default": false,
                     "icon": "none",
-                    "width": 20
+                    "image_upload": "shopify://shop_images/favicon.png",
+                    "width": 26
                   },
                   "blocks": {
                     "text_iHVV9G": {
@@ -628,7 +632,7 @@
           },
           "block_order": [
             "text_NtbAtX",
-            "text_QKMkJq",
+            "text_VFqy8K",
             "accordion_U7TXkG"
           ]
         },
