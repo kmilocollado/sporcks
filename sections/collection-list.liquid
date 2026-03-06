@@ -87,8 +87,9 @@
   .section-{{ section.id }} slideshow-arrows .slideshow-control {
     opacity: 1;
   }
-  .section-{{ section.id }} .resource-list__carousel .slideshow-control[disabled] {
-    display: block;
+  .section-{{ section.id }} .resource-list__carousel .slideshow-control[disabled], 
+  .section-{{ section.id }} .resource-list__carousel .slideshow-control[disabled]:hover {
+    display: flex;
     opacity: 0.3;
     pointer-events: auto;
   }
