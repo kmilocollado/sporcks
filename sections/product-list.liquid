@@ -8,7 +8,7 @@
 <div
   data-testid="product-list"
   class="
-    section
+    section section-{{ section.id }}
     section--{{ section.settings.section_width }}
     color-{{ section.settings.color_scheme }}
     section-resource-list
@@ -20,6 +20,34 @@
     {% render 'gap-style', value: section.settings.gap %}
   "
 >
+  {%- if section.settings.layout_type == 'carousel' -%}
+    <div class="product-list-carousel-header">
+      <div class="product-list-carousel-header__title">
+        {%- if section.settings.title != blank -%}
+          <div
+            class="product-list__title text-block {{ section.settings.title_type_preset }}"
+            style="{% render 'typography-style', settings: section.settings, preset: section.settings.title_type_preset %} --text-align: {{ section.settings.title_alignment }};"
+          >
+            {{ section.settings.title }}
+          </div>
+        {%- endif -%}
+      </div>
+      <div
+        class="product-list-carousel-nav-slot product-list-carousel-header__nav"
+        data-carousel-nav-slot="productList"
+        aria-hidden="true"
+      ></div>
+    </div>
+  {%- else -%}
+    {%- if section.settings.title != blank -%}
+      <div
+        class="product-list__title text-block {{ section.settings.title_type_preset }}"
+        style="{% render 'typography-style', settings: section.settings, preset: section.settings.title_type_preset %} --text-align: {{ section.settings.title_alignment }};"
+      >
+        {{ section.settings.title }}
+      </div>
+    {%- endif -%}
+  {%- endif -%}
   <div class="section-resource-list__header">
     {%- content_for 'block', type: '_product-list-content', id: 'static-header' -%}
   </div>
@@ -59,17 +87,21 @@
   {% endcapture %}
 
   {% liquid
-    # Create an array from the list items to be used for different layout types
     assign list_items_array = list_items | strip | split: '<!--@list/split-->'
+    assign carousel_icons_style = section.settings.icons_style | default: 'arrow'
+    assign carousel_icons_shape = section.settings.icons_shape | default: 'none'
   %}
 
   {% render 'resource-list',
     list_items: list_items,
     list_items_array: list_items_array,
     settings: section.settings,
+    carousel_ref: 'productList',
     slide_count: max_items,
     content_type: 'products',
-    test_id: 'resource-list-grid'
+    test_id: 'resource-list-grid',
+    carousel_icons_style: carousel_icons_style,
+    carousel_icons_shape: carousel_icons_shape
   %}
 
   <div
@@ -79,6 +111,112 @@
     {%- content_for 'blocks' -%}
   </div>
 </div>
+
+<style>
+  .product-list-carousel-nav-slot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .product-list-carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .product-list-carousel-header__title {
+    flex: 1;
+    min-width: 0;
+  }
+  .product-list-carousel-header__nav {
+    flex-shrink: 0;
+  }
+  .section-{{ section.id }} slideshow-arrows .slideshow-control {
+    opacity: 1 !important;
+  }
+  .section-{{ section.id }} .resource-list__carousel .slideshow-control[disabled],
+  .section-{{ section.id }} .resource-list__carousel .slideshow-control[disabled]:hover {
+    display: flex;
+    opacity: 0.3 !important;
+    pointer-events: auto;
+  }
+  @media screen and (min-width: 1025px) {
+    .section-{{ section.id }} slideshow-arrows {
+      position: relative;
+      display: flex;
+      justify-content: end;
+      gap: 30px;
+      margin-bottom: 30px;
+      margin-top: -65px;
+    }
+    .section-{{ section.id }} .slideshow-control {
+      margin: 0 !important;
+    }
+  }
+</style>
+
+{% if section.settings.layout_type == 'carousel' %}
+  <script>
+    (function() {
+      function initCarouselNavSlot() {
+        const section = document.querySelector('[data-testid="product-list"]')?.closest('.shopify-section');
+        if (!section) return false;
+        const slot = section.querySelector('[data-carousel-nav-slot="productList"]');
+        if (!slot || slot.children.length > 0) return false;
+        const slideshow = section.querySelector('slideshow-component[ref="productList"]');
+        if (!slideshow) return false;
+        const originalArrows = slideshow.querySelector('slideshow-arrows');
+        if (!originalArrows) return false;
+
+        var clone = originalArrows.cloneNode(true);
+        var prevBtn = clone.querySelector('[ref="previous"], .slideshow-control--previous');
+        var nextBtn = clone.querySelector('[ref="next"], .slideshow-control--next');
+        if (!prevBtn || !nextBtn) return false;
+
+        prevBtn.removeAttribute('on:click');
+        nextBtn.removeAttribute('on:click');
+        prevBtn.addEventListener('click', function(e) { e.preventDefault(); slideshow.previous(); syncDisabled(); });
+        nextBtn.addEventListener('click', function(e) { e.preventDefault(); slideshow.next(); syncDisabled(); });
+
+        function syncDisabled() {
+          var origPrev = originalArrows.querySelector('[ref="previous"], .slideshow-control--previous');
+          var origNext = originalArrows.querySelector('[ref="next"], .slideshow-control--next');
+          if (origPrev) prevBtn.disabled = origPrev.disabled;
+          if (origNext) nextBtn.disabled = origNext.disabled;
+        }
+        slot.appendChild(clone);
+        slot.removeAttribute('aria-hidden');
+        originalArrows.style.display = 'none';
+        syncDisabled();
+        var mo = new MutationObserver(syncDisabled);
+        mo.observe(originalArrows, { attributes: true, attributeFilter: ['disabled'], subtree: true });
+        return true;
+      }
+      function run() {
+        var attempts = 0;
+        var maxAttempts = 20;
+        function tryInit() {
+          if (initCarouselNavSlot()) return;
+          attempts++;
+          if (attempts < maxAttempts) setTimeout(tryInit, 150);
+        }
+        setTimeout(tryInit, 50);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+      } else {
+        run();
+      }
+      document.addEventListener('shopify:section:load', function(ev) {
+        if (ev.detail && ev.detail.sectionId && document.querySelector('.shopify-section[id="shopify-section-' + ev.detail.sectionId + '"] [data-testid="product-list"]')) {
+          setTimeout(run, 0);
+        }
+      });
+    })();
+  </script>
+{% endif %}
 
 {% schema %}
 {
@@ -103,6 +241,41 @@
       "type": "collection",
       "id": "collection",
       "label": "t:settings.collection"
+    },
+    {
+      "type": "header",
+      "content": "t:names.heading"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:settings.title"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "select",
+      "id": "title_type_preset",
+      "label": "t:settings.preset",
+      "options": [
+        { "value": "rte", "label": "t:options.default" },
+        { "value": "paragraph", "label": "t:options.paragraph" },
+        { "value": "h1", "label": "t:options.h1" },
+        { "value": "h2", "label": "t:options.h2" },
+        { "value": "h3", "label": "t:options.h3" },
+        { "value": "h4", "label": "t:options.h4" },
+        { "value": "h5", "label": "t:options.h5" },
+        { "value": "h6", "label": "t:options.h6" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text_alignment",
+      "id": "title_alignment",
+      "label": "t:settings.alignment",
+      "default": "left"
     },
     {
       "type": "select",
