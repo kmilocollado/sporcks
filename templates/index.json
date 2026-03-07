@@ -861,6 +861,7 @@
         "title": "<p>Latest arrivals</p>",
         "title_type_preset": "h2",
         "title_alignment": "left",
+        "show_view_all_link": true,
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,
