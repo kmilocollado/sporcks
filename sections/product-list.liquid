@@ -31,12 +31,12 @@
             {{ section.settings.title }}
           </div>
         {%- endif -%}
-        {%- if section.settings.show_view_all_link and section.settings.collection != blank -%}
-          <a href="{{ section.settings.collection.url }}" class="product-list__view-all link">
-            {{ 'actions.view_all' | t }}
-          </a>
-        {%- endif -%}
       </div>
+      {%- if section.settings.show_view_all_link and section.settings.collection != blank -%}
+        <a href="{{ section.settings.collection.url }}" class="product-list__view-all link product-list-carousel-header__view-all">
+          {{ 'actions.view_all' | t }}
+        </a>
+      {%- endif -%}
       <div
         class="product-list-carousel-nav-slot product-list-carousel-header__nav"
         data-carousel-nav-slot="productList"
@@ -138,10 +138,12 @@
     white-space: nowrap;
   }
   .product-list-carousel-header__title {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+  }
+  .product-list-carousel-header__view-all {
+    flex-shrink: 0;
+    white-space: nowrap;
   }
   .product-list-carousel-nav-slot {
     display: inline-flex;
@@ -308,7 +310,7 @@
     {
       "type": "checkbox",
       "id": "show_view_all_link",
-      "label": "t:settings.view_all_button_label",
+      "label": "t:settings.view_all_button",
       "default": false
     },
     {
