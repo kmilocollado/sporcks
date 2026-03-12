@@ -288,11 +288,32 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "social_links_FjFJpL": {
+              "type": "social-links",
+              "name": "t:names.social_media_links",
+              "settings": {
+                "facebook_url": "",
+                "instagram_url": "",
+                "youtube_url": "",
+                "tiktok_url": "",
+                "twitter_url": "",
+                "threads_url": "",
+                "linkedin_url": "",
+                "bluesky_url": "",
+                "snapchat_url": "",
+                "pinterest_url": "",
+                "tumblr_url": "",
+                "vimeo_url": "",
+                "custom_url": ""
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "text_Ee3cnk",
-            "email_signup_an3HaR"
+            "email_signup_an3HaR",
+            "social_links_FjFJpL"
           ]
         }
       },
