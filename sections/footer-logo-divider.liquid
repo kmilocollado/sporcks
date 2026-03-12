@@ -1,0 +1,310 @@
+{% liquid
+  assign section_settings = section.settings
+  assign image = settings.logo
+
+  if section_settings.inverse and settings.logo_inverse
+    assign image = settings.logo_inverse
+  endif
+%}
+
+{%- if image -%}
+  {% capture logo_image %}
+    {{-
+      image
+      | image_url: width: 3840
+      | image_tag:
+        width: image.width,
+        widths: '240, 352, 832, 1200, 1600, 1920, 2560, 3840',
+        height: image.height,
+        class: 'footer-logo-divider__image',
+        alt: shop.name,
+        sizes: '(min-width: 750px) var(--footer-logo-width), 120px'
+    -}}
+  {% endcapture %}
+{%- endif -%}
+
+<div class="section-background color-{{ section_settings.color_scheme }}"></div>
+<div
+  class="section section--{{ section_settings.section_width }} color-{{ section_settings.color_scheme }}"
+  {{ section.shopify_attributes }}
+>
+  <div
+    class="footer-logo-divider spacing-style"
+    style="
+      {% if section_settings.unit == 'percent' %}
+        --footer-logo-width: {{ section_settings.percent_width }}%;
+      {% else %}
+        {% if image %}
+          --footer-logo-width: {{ image.width | times: 1.00 | divided_by: image.height | times: section_settings.pixel_height }}px;
+        {% else %}
+          --footer-logo-width: {{ shop.name.size | times: 0.65 }}em;
+          --footer-logo-height: {{ section_settings.pixel_height }}px;
+        {% endif %}
+      {% endif %}
+      {% if section_settings.custom_mobile_size %}
+        {% if section_settings.unit_mobile == 'percent' %}
+          --footer-logo-width-mobile: {{ section_settings.percent_width_mobile }}%;
+        {% else %}
+          {% if image %}
+            --footer-logo-width-mobile: {{ image.width | times: 1.00 | divided_by: image.height | times: section_settings.pixel_height_mobile }}px;
+          {% else %}
+            --footer-logo-width-mobile: {{ shop.name.size | times: 0.65 }}em;
+            --footer-logo-height-mobile: {{ section_settings.pixel_height_mobile }}px;
+          {% endif %}
+        {% endif %}
+      {% endif %}
+      --footer-logo-divider-thickness: {{ section_settings.line_thickness }}px;
+      --footer-logo-divider-gap: {{ section_settings.gap }}px;
+      {% render 'spacing-style', settings: section_settings %}
+    "
+  >
+    <span class="footer-logo-divider__line" aria-hidden="true"></span>
+
+    <div class="footer-logo-divider__logo-wrapper">
+      {% if logo_image %}
+        <div class="footer-logo-divider__logo">
+          {{ logo_image }}
+        </div>
+      {% else %}
+        <div class="footer-logo-divider__logo footer-logo-divider__logo--text">
+          {% render 'jumbo-text', text: shop.name, block_settings: section.settings %}
+        </div>
+      {% endif %}
+    </div>
+
+    <span class="footer-logo-divider__line" aria-hidden="true"></span>
+  </div>
+</div>
+
+{% stylesheet %}
+  .footer-logo-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--footer-logo-divider-gap, 24px);
+    width: 100%;
+  }
+
+  .footer-logo-divider__line {
+    flex: 1;
+    min-width: 0;
+    height: 0;
+    border-bottom: var(--footer-logo-divider-thickness) solid var(--color-border);
+  }
+
+  .footer-logo-divider__logo-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-logo-divider__logo {
+    width: var(--footer-logo-width);
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-logo-divider__logo--text {
+    font-size: var(--footer-logo-height, 1em);
+  }
+
+  .footer-logo-divider__image {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .footer-logo-divider__logo {
+      width: var(--footer-logo-width-mobile, var(--footer-logo-width));
+    }
+
+    .footer-logo-divider__logo--text {
+      font-size: var(--footer-logo-height-mobile, var(--footer-logo-height, 1em));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Logo con líneas",
+  "class": "section-wrapper",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "label": "Usar logo inverso",
+      "id": "inverse",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Líneas"
+    },
+    {
+      "type": "range",
+      "id": "line_thickness",
+      "label": "Grosor de la línea",
+      "min": 0.5,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Espacio entre línea y logo",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Tamaño del logo"
+    },
+    {
+      "type": "paragraph",
+      "content": "Edita el logo en [ajustes del tema](/admin/themes/current/editor?context=theme&category=logo%20and%20favicon)"
+    },
+    {
+      "type": "select",
+      "id": "unit",
+      "label": "Unidad",
+      "options": [
+        { "value": "pixel", "label": "Píxeles" },
+        { "value": "percent", "label": "Porcentaje" }
+      ],
+      "default": "percent"
+    },
+    {
+      "type": "range",
+      "id": "pixel_height",
+      "label": "Altura",
+      "min": 16,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "default": 48,
+      "visible_if": "{{ section.settings.unit == 'pixel' }}"
+    },
+    {
+      "type": "range",
+      "id": "percent_width",
+      "label": "Ancho",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30,
+      "visible_if": "{{ section.settings.unit == 'percent' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_mobile_size",
+      "label": "Tamaño distinto en móvil",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Tamaño en móvil",
+      "visible_if": "{{ section.settings.custom_mobile_size == true }}"
+    },
+    {
+      "type": "select",
+      "id": "unit_mobile",
+      "label": "Unidad",
+      "options": [
+        { "value": "pixel", "label": "Píxeles" },
+        { "value": "percent", "label": "Porcentaje" }
+      ],
+      "default": "percent",
+      "visible_if": "{{ section.settings.custom_mobile_size == true }}"
+    },
+    {
+      "type": "range",
+      "id": "percent_width_mobile",
+      "label": "Ancho",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50,
+      "visible_if": "{{ section.settings.unit_mobile == 'percent' and section.settings.custom_mobile_size == true }}"
+    },
+    {
+      "type": "range",
+      "id": "pixel_height_mobile",
+      "label": "Altura",
+      "min": 16,
+      "max": 80,
+      "step": 8,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ section.settings.unit_mobile == 'pixel' and section.settings.custom_mobile_size == true }}"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Ancho de sección",
+      "options": [
+        { "value": "page-width", "label": "Ancho de página" },
+        { "value": "full-width", "label": "Completo" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Relleno"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo con líneas",
+      "category": "footer",
+      "settings": {
+        "line_thickness": 1,
+        "gap": 24,
+        "unit": "percent",
+        "percent_width": 30
+      }
+    }
+  ]
+}
+{% endschema %}
