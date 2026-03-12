@@ -283,7 +283,7 @@
                 "integrated_button": false,
                 "button_type_preset": "paragraph",
                 "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-end": 20,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -293,10 +293,10 @@
               "type": "social-links",
               "name": "t:names.social_media_links",
               "settings": {
-                "facebook_url": "",
-                "instagram_url": "",
-                "youtube_url": "",
-                "tiktok_url": "",
+                "facebook_url": "#",
+                "instagram_url": "#",
+                "youtube_url": "#",
+                "tiktok_url": "#",
                 "twitter_url": "",
                 "threads_url": "",
                 "linkedin_url": "",
@@ -308,12 +308,26 @@
                 "custom_url": ""
               },
               "blocks": {}
+            },
+            "payment_icons_VJQ4xG": {
+              "type": "payment-icons",
+              "name": "t:names.payment_icons",
+              "settings": {
+                "horizontal_alignment": "flex-start",
+                "gap": 10,
+                "padding-block-start": 20,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "text_Ee3cnk",
             "email_signup_an3HaR",
-            "social_links_FjFJpL"
+            "social_links_FjFJpL",
+            "payment_icons_VJQ4xG"
           ]
         }
       },
